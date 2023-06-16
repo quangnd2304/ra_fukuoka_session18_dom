@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CRUD Element</title>
+</head>
+
+<body>
+    <div class="ra"></div>
+    <div class="ra"></div>
+    <script>
+        // Thêm 1 phần tử h2 có nội dung là Rikkei Academy trong thẻ div có class = ra
+        /*
+            Bước 1: Tạo thẻ h2
+            Bước 2: Thêm nội dung cho thẻ h2
+            Bước 3: Thêm thẻ h2 vào trong div
+        */
+        /*
+            Tạo mới phần tử:
+            document.createElement("tagName")
+        */
+        // Bước 1
+        let h2RikkeiAcademy = document.createElement("h2");
+        // Bước 2
+        h2RikkeiAcademy.innerText = "Rikkei Academy";
+        console.log("Thẻ h2 vừa tạo -->", h2RikkeiAcademy);
+        // Bước 3: thêm thẻ h2 vào div
+        /*
+            Thêm một phần tử con vào phần tử cha: đứng từ phần tử cha
+            element.appendChild(elementChild)
+        */
+        //3.1. Truy cập vào phần tử cha div
+        let arrDiv = document.getElementsByClassName("ra");//HTMLCollection
+        console.log("Array Div-->", arrDiv);
+        //3.2. Thêm h2 vào div
+        arrDiv[0].appendChild(h2RikkeiAcademy);
+
+
+
+    </script>
+</body>
+
+</html>

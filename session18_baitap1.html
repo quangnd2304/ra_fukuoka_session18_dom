@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài tập 1</title>
+</head>
+
+<body>
+    <script>
+        /*
+            Bài tập 1:            
+            Tạo các thẻ sau:
+                1. Thẻ div có id = ra
+                2. Thẻ h2 có nội dung là Rikkei - Fukuoka
+                3. Thẻ p có nội dung là Quyết tâm trở thành lập trình viên
+            Thêm các thẻ h2 và p vào trong thẻ div có id là ra
+            và hiển thị nội dung ra trình duyệt
+            Bước 1: Tạo div
+            Bước 2: add div vào body
+            Bước 3: tạo h2 và p với các nội dung
+            Bước 4: add h2 và p vào div
+        */
+        // Bước 1: Tạo div
+        let div = document.createElement("div");
+        div.setAttribute("id", "ra");
+        // Bước 2: add div vào body
+        //2.1. truy cập vào body
+        // let body = document.getElementsByTagName("body");       
+        //2.2. add div vào body
+        // body[0].appendChild(div);
+        document.body.appendChild(div);
+        // Bước 3: Tạo h2 và p với nội dung của nó
+        let h2 = document.createElement("h2");
+        h2.innerText = "Rikkei - Fukuoka";
+        let p = document.createElement("p");
+        p.innerHTML = "Quyết tâm trở thành lập trình viên";
+        // Bước 4: add h2 và p vào div
+        div.appendChild(h2);
+        div.appendChild(p);
+        // Xóa thẻ h2 ra khỏi div
+        div.removeChild(h2);
+        // Thay thể thẻ p bằng thẻ h2
+        div.replaceChild(h2, p);
+        console.log("URL của trang web-->", document.URL);
+        console.log("Title của trang web-->", document.title);
+        console.log("Đối tượng head của document là-->", document.head);
+    </script>
+</body>
+
+</html>

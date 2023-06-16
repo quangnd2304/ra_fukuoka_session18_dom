@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DOM</title>
+</head>
+
+<body>
+    <h2 id="ra" style="color: red;font-size: 20px;"><span>Rikkei Academy</span></h2>
+    <p class="rikkei">Học viện đào tạo CNTT chất lượng Nhật Bản</p>
+    <div>
+        <h3 class="rikkei">RA - Fukuoka</h3>
+        <p name="fukuoka">Có việc tại Nhật Bản</p>
+        <p>Thầy Quang yêu các bạn</p>
+        <a href="#">Rikkei Academy</a>
+    </div>
+    <a href="#">Fukuoka</a>
+    <script>
+        console.log(document);
+        /*
+            Cách 1: Tương tác với các phần tử html qua id của thẻ
+            document.getElementById("id"): 1 element
+        */
+        let ra = document.getElementById("ra");
+        console.log("Phần tử có id là ra--->", ra);
+        /*
+            Cách 2: Tương tác với các phần tử html qua tên thẻ (tag)
+            document.getElementByTagName("tag"): HTMLCollection -> array
+        */
+        let arrElementP = document.getElementsByTagName("p");
+        console.log("Các phần tử là thẻ p-->", arrElementP);
+        /*
+            Cách 3: Tương tác với các phần tử html qua class của thẻ
+            document.getElementByClassName("class"): HTMLCollection -> array
+        */
+        let arrElementRikkei = document.getElementsByClassName("rikkei");
+        console.log("Các phần tử có class là rikkei-->", arrElementRikkei);
+        /*
+            Cách 4: Tương tác với các phần tử html qua selector
+            document.querySelector("selector"): 1 element
+            document.querySelectorAll("selector"): NodeList -> array
+        */
+        let pFirstElement = document.querySelector("div p");
+        console.log("Phần tử p đầu tiên theo bộ chọn--->", pFirstElement);
+        let pSelectorAll = document.querySelectorAll("div p");
+        console.log("Các phần tử thỏa mãn bộ chọn-->", pSelectorAll);
+        // Các thuộc tính của phần tử
+        /*
+            element.innerText: Lấy ra text (content) của element
+            element.innerHTML: Tất cả các thẻ html chứa trong element
+        */
+        console.log("Thuộc tính innerText của thẻ có id là ra-->", ra.innerText);
+        console.log("Thuộc tính innerHTML của thẻ có id là ra-->", ra.innerHTML);
+        // Thay đổi giá trị thuộc tính innerText và innerHTML
+        ra.innerText = "Học viện Rikkei Academy";
+        ra.innerHTML = "<b>Rikkei Academy - Học viện</b>";
+        //Giá trị thuộc tính của element
+        console.log("Giá trị thuộc tính id của thẻ ra-->", ra.attributes.id);
+        //Giá trị property của css
+        console.log("Màu chữ của thẻ có id là ra-->", ra.style.color);
+        console.log("Fontsize của thẻ có id là ra-->", ra.style.fontSize);
+        // Thay đổi giá trị thuộc tính
+        pFirstElement.setAttribute("name", "CN-fukuoka");
+        pFirstElement.setAttribute("id", "fk");
+        // Lấy tất cả thẻ a và area trong trang web
+        console.log("Các thẻ a và area trong trang web-->", document.links);
+        console.log("Các thẻ img trong trang web-->", document.images);
+
+
+
+    </script>
+</body>
+
+</html>
